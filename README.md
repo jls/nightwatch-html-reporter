@@ -56,8 +56,10 @@ nightwatch-html-reporter ~/myProject/tests/nightwatch/reports
 nightwatch-html-reporter <reports-directory> <theme-name(default:'default')> <report-filename(default:generatedReport.html)>
 ```
 
-## Examples
-_(Coming soon)_
+## Example Report
+An example of the HTML report generated
+
+![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/screen1.png)
 
 
 ## Release History
