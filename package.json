@@ -39,7 +39,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt": "~0.4.5"
   },
-  "keywords": [],
+  "keywords": ["nightwatch", "reporter", "html reporter"],
   "preferGlobal": "true",
   "bin": {
     "nightwatch-html-reporter" : "lib/nightwatch-html-reporter-cli.js"
