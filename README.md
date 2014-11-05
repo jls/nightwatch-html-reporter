@@ -9,6 +9,7 @@ Install the module with: `npm install -g nightwatch-html-reporter`
 This requires Nightwatch >= 0.5.32.
 
 ```javascript
+/* In nightwatch/globals.js */
 var HtmlReporter = require('nightwatch-html-reporter');
 var reporter = new HtmlReporter({
 	openBrowser: true,
