@@ -1,6 +1,6 @@
 'use strict';
 
-var nightwatch_reportviewer = require('../lib/nightwatch-reportviewer.js');
+var nightwatch_html_reporter = require('../lib/nightwatch-html-reporter.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,15 +22,15 @@ var nightwatch_reportviewer = require('../lib/nightwatch-reportviewer.js');
     test.ifError(value)
 */
 
-exports['awesome'] = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(nightwatch_reportviewer.awesome(), 'awesome', 'should be awesome.');
-    test.done();
-  },
-};
+// exports['awesome'] = {
+//   setUp: function(done) {
+//     // setup here
+//     done();
+//   },
+//   'no args': function(test) {
+//     test.expect(1);
+//     // tests here
+//     test.equal(nightwatch_reportviewer.awesome(), 'awesome', 'should be awesome.');
+//     test.done();
+//   },
+// };
