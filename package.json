@@ -1,7 +1,7 @@
 {
   "name": "nightwatch-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jls/nightwatch-html-reporter",
   "author": {
     "name": "James Smith",
@@ -29,9 +29,9 @@
     "test": "grunt nodeunit"
   },
   "dependencies": {
-		"xml2js": "0.4.4",
-		"lodash": "^2.4.1",
-		"jade": "1.7.0"
+    "xml2js": "0.4.4",
+    "lodash": "^2.4.1",
+    "jade": "1.7.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.4",
@@ -39,9 +39,13 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt": "~0.4.5"
   },
-  "keywords": ["nightwatch", "reporter", "html reporter"],
+  "keywords": [
+    "nightwatch",
+    "reporter",
+    "html reporter"
+  ],
   "preferGlobal": "true",
   "bin": {
-    "nightwatch-html-reporter" : "lib/nightwatch-html-reporter-cli.js"
+    "nightwatch-html-reporter": "lib/nightwatch-html-reporter-cli.js"
   }
 }
