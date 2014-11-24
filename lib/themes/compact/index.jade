@@ -7,9 +7,8 @@ html(lang="en")
 		script(type='text/javascript', src= themeDirectory + '../default/default.js')
 	body
 		h1 Nightwatch Results
+		a.toggleSuccess(href='#') Show/Hide Successes
 		#container
-			a.toggleSuccess(href='#') Show/Hide Successes
-
 			each suite in testSuites
 				div(class= (suite.isFailure) ? 'suite error' : 'suite success')
 					div.name= suite.name

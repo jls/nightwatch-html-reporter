@@ -3,6 +3,17 @@ body{
 	font-family: 'Helvetica Neue';
 }
 
+h1{
+	font-size: 1em;
+}
+
+a{
+	font-size: 0.8em;
+}
+#container{
+	margin-top: 10px;
+}
+
 .toggleSuccess, .toggleError{
 	margin-right: 10px;
 }
