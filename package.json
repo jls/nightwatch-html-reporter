@@ -1,7 +1,7 @@
 {
   "name": "nightwatch-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports.",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "homepage": "https://github.com/jls/nightwatch-html-reporter",
   "author": {
     "name": "James Smith",
@@ -31,7 +31,8 @@
   "dependencies": {
     "xml2js": "0.4.4",
     "lodash": "^2.4.1",
-    "jade": "1.7.0"
+    "jade": "1.7.0",
+    "nconf": "0.6.9"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.4",

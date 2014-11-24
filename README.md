@@ -23,7 +23,7 @@ module.exports = {
 ### Using the reporter from the command line
 
 ```bash
-nightwatch-html-reporter ~/myProject/tests/nightwatch/reports
+nightwatch-html-reporter -d ~/myProject/tests/nightwatch/reports
 ```
 
 ## Documentation
@@ -53,7 +53,15 @@ nightwatch-html-reporter ~/myProject/tests/nightwatch/reports
 ### CLI usage
 
 ```bash
-nightwatch-html-reporter <reports-directory> <theme-name(default:'default')> <report-filename(default:generatedReport.html)>
+nightwatch-html-reporter -d <reports-directory> [--theme (default:'default')] [--output (default:generatedReport.html)]
+```
+
+```
+Options:
+  -d, --report-dir  Directory where nightwatch reports are stored.                  [required]
+  -t, --theme       Name of theme to use.  Should match a directory in lib/themes.  [default: "default"]
+  -o, --output      Filename to use when saving the generated report.               [default: "generatedReport.html"]
+  -b, --browser     If true then generated report will be opened in the browser.    [default: true]
 ```
 
 ## Example Report
