@@ -1,0 +1,51 @@
+body{
+	margin: 10px;
+	font-family: 'Helvetica Neue';
+}
+
+.toggleSuccess, .toggleError{
+	margin-right: 10px;
+}
+
+.suite{
+	border-bottom: 1px solid grey;
+	padding:0;
+}
+.suite.error{
+	background-color: transparent;
+}
+
+.suite:hover{
+	cursor: pointer;
+}
+.suite>.name{
+	color: rgb(51, 134, 51);
+	font-size: 1em;
+	font-weight: bold;
+}
+.suite.error>.name{
+	color: rgb(178, 43, 43);
+}
+.suite>.name>.package{
+	font-size: .7em;
+	padding-left: 5px;
+}
+
+.suite>.name, .testcase>.name{
+	padding-left: 5px;
+}
+
+.testcases{
+	display:none;
+	font-size: 0.8em;
+}
+.testcase{
+	color: rgb(51, 134, 51);
+}
+.testcase img{
+	max-width: 80%;
+}
+.testcase.error{
+	color: rgb(178, 43, 43);
+}
+

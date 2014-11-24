@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+	head
+		title Nightwatch HTML Report - Default Theme
+		script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		link(rel="stylesheet", href= themeDirectory + 'compact.css')
+		script(type='text/javascript', src= themeDirectory + '../default/default.js')
+	body
+		h1 Nightwatch Results
+		#container
+			a.toggleSuccess(href='#') Show/Hide Successes
+
+			each suite in testSuites
+				div(class= (suite.isFailure) ? 'suite error' : 'suite success')
+					div.name= suite.name
+						span.package= '(' + suite.package + ')'
+					ul.testcases
+						each testCase in suite.testcases
+							li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
+								if testCase.isFailure
+									div.name= testCase.name + " " + testCase.failureMessage
+									each sshot in testCase.screenshots
+										div.screenshot
+											img(src= sshot)
+								else
+									div.name= testCase.name
