@@ -46,7 +46,10 @@ nightwatch-html-reporter -d ~/myProject/tests/nightwatch/reports
 
 	/* The theme that will be used to generate the html report.
 		This should match a directory under the lib/themes directory. */
-	themeName: 'default'
+	themeName: 'default',
+
+	/* If true then only errors will be shown in the report. */
+	hideSuccess: false
 }
 ```
 
@@ -62,6 +65,7 @@ Options:
   -t, --theme       Name of theme to use.  Should match a directory in lib/themes.  [default: "default"]
   -o, --output      Filename to use when saving the generated report.               [default: "generatedReport.html"]
   -b, --browser     If true then generated report will be opened in the browser.    [default: true]
+  -c, --compact     Hides success cases and only shows error cases.
 ```
 
 ## Example Report
