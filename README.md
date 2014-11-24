@@ -69,9 +69,12 @@ Options:
 ```
 
 ## Example Report
-An example of the HTML report generated
+An example of the HTML report generated using the 'default' theme.
 
 ![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/screen1.png)
+
+An example of the HTML report generated using the 'compact' theme.
+![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/screen2.png)
 
 
 ## Release History
