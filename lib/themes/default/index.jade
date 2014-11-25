@@ -8,7 +8,8 @@ html(lang="en")
 	body
 		h1 Nightwatch Results
 		#container
-			a.toggleSuccess(href='#') Show/Hide Successes
+			if !hideSuccess
+				a.toggleSuccess(href='#') Show/Hide Successes
 
 			each suite in testSuites
 				div(class= (suite.isFailure) ? 'suite error' : 'suite success')
