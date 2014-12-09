@@ -32,7 +32,9 @@
     "xml2js": "0.4.4",
     "lodash": "^2.4.1",
     "jade": "1.7.0",
-    "nconf": "0.6.9"
+    "nconf": "0.6.9",
+    "readdirp": "1.2.0",
+    "open": "0.0.5"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.4",
