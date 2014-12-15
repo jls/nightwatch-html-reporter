@@ -1,11 +1,11 @@
 {
   "passed":3,
   "failed":1,
-  "errors":1,
+  "errors":0,
   "skipped":1,
   "tests":4,
   "errmessages":[
-    "Unable to locate element: \"#main\" using: css selector"
+
   ],
   "modules":{
     "GoogleTest":{
@@ -16,12 +16,12 @@
         "skipped":0,
         "tests":[
           {
-            "message":"Element <body> was visible after 80 milliseconds.",
+            "message":"Element <body> was visible after 63 milliseconds.",
             "stacktrace":"",
             "failure":false
           },
           {
-            "message":"Element <button[name=btnG]> was visible after 33 milliseconds.",
+            "message":"Element <button[name=btnG]> was visible after 49 milliseconds.",
             "stacktrace":"",
             "failure":false
           }
@@ -43,17 +43,71 @@
       "step three":{
         "passed":0,
         "failed":1,
-        "errors":1,
+        "errors":0,
         "skipped":1,
         "tests":[
           {
-            "message":"Testing if element <#main> contains text: \"The Night Watch JLS\". Element could not be located.",
-            "stacktrace":"Assertion failed in: Testing if element <#main> contains text: \"The Night Watch JLS\". Element could not be located.: Expected \"The Night Watch JLS\" but got: \"null\"\n    at Object.<anonymous> (/Users/james/Projects/airstep1/node_modules/nightwatch/lib/core/assertion.js:88:19)\n    at Object.<anonymous> (/Users/james/Projects/airstep1/node_modules/nightwatch/lib/api/element-commands.js:341:22)\n    at HttpRequest.<anonymous> (/Users/james/Projects/airstep1/node_modules/nightwatch/lib/index.js:269:20)\n    at HttpRequest.EventEmitter.emit (events.js:98:17)\n    at HttpRequest.<anonymous> (/Users/james/Projects/airstep1/node_modules/nightwatch/lib/index.js:316:15)\n    at HttpRequest.EventEmitter.emit (events.js:106:17)\n    at IncomingMessage.<anonymous> (/Users/james/Projects/airstep1/node_modules/nightwatch/lib/http/request.js:148:16)\n    at IncomingMessage.EventEmitter.emit (events.js:117:20)\n    at _stream_readable.js:920:16\n    at process._tickCallback (node.js:415:13)",
-            "failure":"Expected \"The Night Watch JLS\" but got: \"null\"",
-            "screenshots":[
-              "/Users/james/Projects/one/tests/nightwatch/screenshots/ERROR_Fri-Dec-12-2014-144835-GMT-0500.png"
-            ]
+            "message":"Testing if element <#main> contains text: \"The Night Watch JLS\".",
+            "stacktrace":"Assertion failed in: Testing if element <#main> contains text: \"The Night Watch JLS\".: Expected \"The Night Watch JLS\" but got: \"WebVideosImagesBooksShoppingMore\nSearch tools\nAbout 6,390,000 results (0.36 seconds) \n\n\nSearch Results\nNight Wa...",
+            "failure":"Expected \"The Night Watch JLS\" but got: \"WebVideosImagesBooksShoppingMore\nSearch tools\nAbout 6,390,000 results (0.36 seconds) \n\n\nSearch Results\nNigh...\""
           }
+        ]
+      }
+    }
+  }
+}
+
+
+// Second result set
+{
+  "passed":3,
+  "failed":0,
+  "errors":1,
+  "skipped":0,
+  "tests":3,
+  "errmessages":[
+    "Unable to locate element: \"some element that does not exist\" using: css selector"
+  ],
+  "modules":{
+    "GoogleTest":{
+      "step one":{
+        "passed":2,
+        "failed":0,
+        "errors":0,
+        "skipped":0,
+        "tests":[
+          {
+            "message":"Element <body> was visible after 77 milliseconds.",
+            "stacktrace":"",
+            "failure":false
+          },
+          {
+            "message":"Element <button[name=btnG]> was visible after 35 milliseconds.",
+            "stacktrace":"",
+            "failure":false
+          }
+        ]
+      },
+      "step two":{
+        "passed":1,
+        "failed":0,
+        "errors":0,
+        "skipped":0,
+        "tests":[
+          {
+            "message":"Testing if element <#main> contains text: \"The Night Watch\".",
+            "stacktrace":"",
+            "failure":false
+          }
+        ]
+      },
+      "step four":{
+        "passed":0,
+        "failed":0,
+        "errors":1,
+        "skipped":0,
+        "tests":[
+
         ]
       }
     }

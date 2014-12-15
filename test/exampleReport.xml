@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="GoogleTest"
+             errors="1"
+             failures="1"
+             tests="5">
+
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="step one" package="GoogleTest" skipped="0"
+    tests="2" time="" timestamp="">
+
+
+      <testcase name="Element &lt;body&gt; was visible after 54 milliseconds.">
+
+
+      </testcase>
+
+      <testcase name="Element &lt;button[name=btnG]&gt; was visible after 83 milliseconds.">
+
+
+      </testcase>
+
+
+      <system-err>
+        Unable to locate element: &quot;#main&quot; using: css selector
+      </system-err>
+
+    </testsuite>
+
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="step two" package="GoogleTest" skipped="0"
+    tests="1" time="" timestamp="">
+
+
+      <testcase name="Testing if element &lt;#main&gt; contains text: &quot;The Night Watch&quot;.">
+
+
+      </testcase>
+
+
+      <system-err>
+        Unable to locate element: &quot;#main&quot; using: css selector
+      </system-err>
+
+    </testsuite>
+
+  <testsuite errors="1" failures="1" hostname="" id=""
+    name="step three" package="GoogleTest" skipped="1"
+    tests="2" time="" timestamp="">
+
+
+      <testcase name="Testing if element &lt;#main&gt; contains text: &quot;The Night Watch JLS&quot;. Element could not be located.">
+
+          <failure message="Expected &quot;The Night Watch JLS&quot; but got: &quot;null&quot;"></failure>
+
+
+          <system-out>
+
+              [[ATTACHMENT|/Users/james/Projects/one/tests/nightwatch/screenshots/ERROR_Mon-Dec-15-2014-110822-GMT-0500.png]]
+
+          </system-out>
+
+      </testcase>
+
+
+      <system-err>
+        Unable to locate element: &quot;#main&quot; using: css selector
+      </system-err>
+
+    </testsuite>
+
+</testsuites>
