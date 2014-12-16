@@ -38,6 +38,13 @@ exports['normalize xml object'] = {
 		test.equal(normalized[0].testcases.length, 2, "Correct number of test cases");
 		test.equal(normalized[2].isFailure, true, "Correctly determine isFailure on error");
 		test.done();
+	},
+
+	'hideSuccess option': function(test){
+		var normalized = normalize([xmlObjects.withOneError], {fromXML: true, hideSuccess: true});
+		test.equal(normalized.length, 1);
+		test.equal(normalized[0].name, 'step four');
+		test.done();
 	}
 };
 
