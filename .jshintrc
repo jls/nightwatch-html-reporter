@@ -3,5 +3,6 @@
 	"trailing": true,
 	"evil": true,
 	"loopfunc": true,
-	"laxcomma": true
+	"laxcomma": true,
+	"node": true
 }
