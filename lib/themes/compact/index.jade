@@ -3,8 +3,8 @@ html(lang="en")
 	head
 		title Nightwatch HTML Report
 		script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-		link(rel="stylesheet", href= themeDirectory + 'compact.css')
-		script(type='text/javascript', src= themeDirectory + '../default/default.js')
+		link(rel="stylesheet", href= assetPath('compact.css'))
+		script(type='text/javascript', src= assetPath('..', 'default', 'default.js'))
 	body
 		h1 Nightwatch Results
 		a.toggleSuccess(href='#') Show/Hide Successes
