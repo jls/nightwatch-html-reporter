@@ -1,9 +1,7 @@
 'use strict';
 
-var nightwatch_html_reporter = require('../lib/nightwatch-html-reporter.js');
 var reportObjects = require('./nightwatchReportObjects.js');
 var xmlObjects = require('./parsedXMLObject.js');
-var _ = require('lodash');
 var normalize = require('../lib/normalize.js');
 
 /*
