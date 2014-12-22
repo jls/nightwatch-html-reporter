@@ -14,7 +14,7 @@ body{
 }
 
 .errmessages h2{
-	margin-top: 5px;
+	margin: 5px 0;
 	font-size: 1em;
 }
 
@@ -40,12 +40,15 @@ body{
 	font-size: 1.5em;
 	font-weight: bold;
 }
-.suite.error>.name{
+.suite>.package{
+	color: rgb(51, 134, 51);
+}
+.suite.error>.name, .suite.error>.package{
 	color: rgb(178, 43, 43);
 }
 .suite>.package{
 	font-size: .75em;
-	padding: 5px;
+	padding: 0 5px 5px 5px;
 }
 
 .suite>.name, .testcase>.name{

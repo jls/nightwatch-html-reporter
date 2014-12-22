@@ -21,16 +21,17 @@ a{
 .errmessages{
 	background-color: rgba(238, 64, 64, 0.43);
 	border: 1px solid rgba(235, 28, 28, 0.78);
-	padding: 5px;
+	padding: 2px;
 }
 
 .errmessages h2{
-	margin: 5px;
-	font-size: 1em;
+	margin: 2px;
+	font-size: .8em;
 }
 
 .errmessages .errors{
 	display: none;
+	font-size: .8em;
 }
 
 .suite{
