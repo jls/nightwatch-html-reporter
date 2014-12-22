@@ -11,7 +11,15 @@ html(lang="en")
 			if !hideSuccess
 				a.toggleSuccess(href='#') Show/Hide Successes
 
-			each suite in testSuites
+			if testRun.errmessages.length > 0
+				div.errmessages
+					h2 Errors
+						span.count= ' (' + testRun.errmessages.length + ')'
+					ul.errors
+						each msg in testRun.errmessages
+							li= msg
+
+			each suite in testRun.suites
 				div(class= (suite.isFailure) ? 'suite error' : 'suite success')
 					div.name= suite.name
 					div.package= suite.package

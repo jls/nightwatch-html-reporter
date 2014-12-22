@@ -29,19 +29,25 @@ exports['normalize xml object'] = {
 		done();
 	},
 	'fromXML option': function(test){
-		var normalized = normalize([xmlObjects.withOneError], {fromXML: true});
+		var run = normalize([xmlObjects.withOneError], {fromXML: true});
 
-		test.equal(normalized.length, 3);
-		test.equal(normalized[0].isFailure, false, "Correctly determine isFailure");
-		test.equal(normalized[0].testcases.length, 2, "Correct number of test cases");
-		test.equal(normalized[2].isFailure, true, "Correctly determine isFailure on error");
+		test.equal(run.suites.length, 3);
+		test.equal(run.suites[0].isFailure, false, "Correctly determine isFailure");
+		test.equal(run.suites[0].testcases.length, 2, "Correct number of test cases");
+		test.equal(run.suites[2].isFailure, true, "Correctly determine isFailure on error");
 		test.done();
 	},
 
 	'hideSuccess option': function(test){
-		var normalized = normalize([xmlObjects.withOneError], {fromXML: true, hideSuccess: true});
-		test.equal(normalized.length, 1);
-		test.equal(normalized[0].name, 'step four');
+		var run = normalize([xmlObjects.withOneError], {fromXML: true, hideSuccess: true});
+		test.equal(run.suites.length, 1);
+		test.equal(run.suites[0].name, 'step four');
+		test.done();
+	},
+
+	'retains error messages': function(test){
+		var run = normalize([xmlObjects.withOneError], {fromXML: true});
+		test.equal(run.errmessages.length, 1);
 		test.done();
 	}
 };
@@ -52,19 +58,25 @@ exports['normalize report object'] = {
     done();
   },
   'no options': function(test) {
-    var normalized = normalize(reportObjects.withOneFailure);
+    var run = normalize(reportObjects.withOneFailure);
 
-    test.equal(normalized.length, 3);
-    test.equal(normalized[0].isFailure, false, "Correctly determine isFailure");
-    test.equal(normalized[0].testcases.length, 2, "Correct number of test cases");
-    test.equal(normalized[2].isFailure, true, "Correctly determine isFailure");
+    test.equal(run.suites.length, 3);
+    test.equal(run.suites[0].isFailure, false, "Correctly determine isFailure");
+    test.equal(run.suites[0].testcases.length, 2, "Correct number of test cases");
+    test.equal(run.suites[2].isFailure, true, "Correctly determine isFailure");
     test.done();
   },
 
 	'hideSuccess option': function(test){
-		var normalized = normalize(reportObjects.withOneFailure, {hideSuccess: true});
-		test.equal(normalized.length, 1);
-		test.equal(normalized[0].name, 'step three');
+		var run = normalize(reportObjects.withOneFailure, {hideSuccess: true});
+		test.equal(run.suites.length, 1);
+		test.equal(run.suites[0].name, 'step three');
+		test.done();
+	},
+
+	'retains error messages': function(test){
+		var run = normalize(reportObjects.withOneError);
+		test.equal(run.errmessages.length, 1);
 		test.done();
 	}
 };
