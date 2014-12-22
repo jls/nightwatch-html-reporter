@@ -56,6 +56,19 @@ exports.reportGenerator = {
 			test.notEqual(-1, html.indexOf(assetpath));
 			test.done();
 		});
+	},
 
+	'shows errors': function(test){
+		test.expect(1);
+		var normalized = normalize(reportObjects.withOneError);
+		generator.writeReport(normalized, {
+			reportsDirectory: __dirname,
+			reportFilename: 'testfilename.html',
+			themeName: 'default',
+			saveFile: false
+		}, function(err, filename, html){
+			test.notEqual(-1, html.indexOf(normalized.errmessages[0].replace(/\"/g, "&quot;")));
+			test.done();
+		});
 	}
 };
