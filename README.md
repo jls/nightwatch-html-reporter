@@ -68,7 +68,7 @@ Options:
   -c, --compact     Hides success cases and only shows error cases.
 ```
 
-## Example Report
+## Example Reports
 
 ### Default Theme
 
