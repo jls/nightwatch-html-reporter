@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+	head
+		title Nightwatch HTML Report - Cover Theme
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css")
+		link(rel="stylesheet", href= assetPath('..', 'cover', 'cover.css'))
+		script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		script(type="text/javascript", src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+
+	body
+		div.site-wrapper
+			div.site-wrapper-inner
+				div.cover-container
+					div.masthead.clearfix
+
+					if !testRun.isFailure
+						div.inner.cover.success
+							h1.status &#10003;
+							h1.cover-heading Everything is awesome!
+							p.lead.
+								All the tests passed and you're the best.
+					else
+						div.inner.cover.failure
+							h1.status &#10005;
+							h1.cover-heading There were a couple of problems :(
+							p.lead.
+								It's ok though, we're gonna get through this
+							div.suites
+								if testRun.errmessages.length > 0
+									div.row
+										div.info.failure
+											div.col-md-offset-1.col-md-12.overf System Errors
+										div.asserts
+											each msg in testRun.errmessages
+												div.row
+													div.col-md-offset-2.overf= msg
+
+								each suite in testRun.suites
+									if suite.isFailure
+										div.row
+											div.info.failure
+												div.col-md-3.col-md-offset-1.overf= suite.package
+												div.col-md-1 -
+												div.col-md-7.overf= suite.name
+											div.asserts
+												each testCase in suite.testcases
+													div.row
+														if testCase.isFailure
+															div.col-md-offset-2.col-md-1.status.failure &#10005;
+														else
+															div.col-md-offset-2.col-md-1.status.success &#10003;
+														div.col-md-9.name= testCase.name
