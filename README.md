@@ -1,5 +1,7 @@
 # nightwatch-html-reporter
 
+[![Build Status](https://travis-ci.org/jls/nightwatch-html-reporter.svg?branch=master)](https://travis-ci.org/jls/nightwatch-html-reporter)
+
 Generates an HTML view of the Nightwatchjs test reports.
 
 ## Getting Started
