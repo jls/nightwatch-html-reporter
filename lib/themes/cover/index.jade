@@ -25,7 +25,7 @@ html(lang="en")
 							h1.status &#10005;
 							h1.cover-heading There were a couple of problems :(
 							p.lead.
-								It's ok though, we're gonna get through this
+								It's ok though, we're gonna get through this.
 							div.suites
 								if testRun.errmessages.length > 0
 									div.row
@@ -51,3 +51,8 @@ html(lang="en")
 														else
 															div.col-md-offset-2.col-md-1.status.success &#10003;
 														div.col-md-9.name= testCase.name
+													if testCase.isFailure
+														each sshot in testCase.screenshots
+															div.row
+																a(href= sshot, target= 'blank')
+																	img.col-md-offset-3.col-md-8(src= sshot)
