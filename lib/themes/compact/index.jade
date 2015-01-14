@@ -3,8 +3,99 @@ html(lang="en")
 	head
 		title Nightwatch HTML Report
 		script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-		link(rel="stylesheet", href= assetPath('compact.css'))
-		script(type='text/javascript', src= assetPath('..', 'default', 'default.js'))
+		style(type="text/css").
+			body{
+				margin: 10px;
+				font-family: 'Helvetica Neue';
+			}
+
+			h1{
+				font-size: 1em;
+			}
+
+			a{
+				font-size: 0.8em;
+			}
+			#container{
+				margin-top: 10px;
+			}
+
+			.toggleSuccess, .toggleError{
+				margin-right: 10px;
+			}
+
+			.errmessages{
+				background-color: rgba(238, 64, 64, 0.43);
+				border: 1px solid rgba(235, 28, 28, 0.78);
+				padding: 2px;
+			}
+
+			.errmessages h2{
+				margin: 2px;
+				font-size: .8em;
+			}
+
+			.errmessages .errors{
+				display: none;
+				font-size: .8em;
+			}
+
+			.suite{
+				border-bottom: 1px solid grey;
+				padding:0;
+			}
+			.suite.error{
+				background-color: transparent;
+			}
+
+			.suite:hover{
+				cursor: pointer;
+			}
+			.suite>.name{
+				color: rgb(51, 134, 51);
+				font-size: 1em;
+				font-weight: bold;
+			}
+			.suite.error>.name{
+				color: rgb(178, 43, 43);
+			}
+			.suite>.name>.package{
+				font-size: .7em;
+				padding-left: 5px;
+			}
+
+			.suite>.name, .testcase>.name{
+				padding-left: 5px;
+			}
+
+			.testcases{
+				display:none;
+				font-size: 0.8em;
+			}
+			.testcase{
+				color: rgb(51, 134, 51);
+			}
+			.testcase img{
+				max-width: 80%;
+			}
+			.testcase.error{
+				color: rgb(178, 43, 43);
+			}
+
+		script(type='text/javascript').
+			$(document).ready(function(){
+				$('.suite, .errmessages').click(function(){
+					var $elem = $(this);
+					$elem.children('.testcases, .errors').slideToggle();
+				});
+				$('.toggleSuccess').click(function(){
+					$('.suite.success').slideToggle();
+				});
+				$('.toggleError').click(function(){
+					$('.suite.error').slideToggle();
+				});
+			});
+
 	body
 		h1 Nightwatch Results
 		a.toggleSuccess(href='#') Show/Hide Successes

@@ -43,21 +43,6 @@ exports.reportGenerator = {
 		});
 	},
 
-	'theme assets': function(test){
-		test.expect(1);
-		var normalized = normalize(reportObjects.withOneFailure);
-		generator.writeReport(normalized, {
-			reportsDirectory: __dirname,
-			reportFilename: 'testfilename.html',
-			themeName: 'default',
-			saveFile: false
-		}, function(err, reportFilename, html){
-			var assetpath = path.join(__dirname, '..', 'lib', 'themes', 'default', 'default.css');
-			test.notEqual(-1, html.indexOf(assetpath));
-			test.done();
-		});
-	},
-
 	'shows errors': function(test){
 		test.expect(1);
 		var normalized = normalize(reportObjects.withOneError);
