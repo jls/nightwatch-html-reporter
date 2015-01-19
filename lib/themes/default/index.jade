@@ -6,7 +6,19 @@ html(lang="en")
 		style(type="text/css").
 			body{
 				margin: 10px;
-				font-family: 'Helvetica Neue';
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 0.8em;
+			}
+
+			h2{
+				font-size: 1.2em;
+				margin: 0;
+				padding: 0;
+			}
+			h3{
+				font-size: 1em;
+				margin: 0;
+				padding: 0;
 			}
 
 			.toggleSuccess, .toggleError{
@@ -28,63 +40,73 @@ html(lang="en")
 				display: none;
 			}
 
-			.suite{
-				border: 1px solid grey;
-				margin-top: 10px;
-				margin-bottom: 10px;
-				padding:0;
-			}
-			.suite.error{
-				background-color: transparent;
+			.suites {
+				margin: 0 0 0 30px;
+				display: none;
 			}
 
-			.suite:hover{
+			.package {
+				margin: 15px 0;
+			}
+			.package > .name {
 				cursor: pointer;
 			}
-			.suite>.name{
-				color: rgb(51, 134, 51);
-				font-size: 1.5em;
-				font-weight: bold;
-			}
-			.suite>.package{
-				color: rgb(51, 134, 51);
-			}
-			.suite.error>.name, .suite.error>.package{
-				color: rgb(178, 43, 43);
-			}
-			.suite>.package{
-				font-size: .75em;
-				padding: 0 5px 5px 5px;
+
+			.suite {
+				margin: 15px 0;
 			}
 
-			.suite>.name, .testcase>.name{
-				padding: 5px;
+			.suite > .name {
+				cursor: pointer;
 			}
 
-			.testcases{
-				display:none;
+			ul{
+				list-style: none;
 			}
-			.testcase{
-				color: rgb(51, 134, 51);
+
+			.testcases {
+				display: none;
+			}
+
+			.status{
+				display: inline-block;
+			}
+
+			.testcase .name {
+				display: inline-block;
+			}
+
+			.success{
+				color: #ccc;
 			}
 			.testcase img{
 				max-width: 80%;
 			}
-			.testcase.error{
+			.package.error .name{
+				color: rgb(178, 43, 43);
+			}
+			.testcase.success .name{
+				color: #ccc;
+			}
+			.testcase.error .status{
 				color: rgb(178, 43, 43);
 			}
 
 		script(type='text/javascript').
 			$(document).ready(function(){
+				$('.package>.name').click(function(){
+					$(this).siblings('.suites').slideToggle();
+				});
+
 				$('.suite, .errmessages').click(function(){
 					var $elem = $(this);
 					$elem.children('.testcases, .errors').slideToggle();
 				});
 				$('.toggleSuccess').click(function(){
-					$('.suite.success').slideToggle();
+					$('.package.success').slideToggle();
 				});
 				$('.toggleError').click(function(){
-					$('.suite.error').slideToggle();
+					$('.package.error').slideToggle();
 				});
 			});
 	body
@@ -101,17 +123,22 @@ html(lang="en")
 						each msg in testRun.errmessages
 							li= msg
 
-			each suite in testRun.suites
-				div(class= (suite.isFailure) ? 'suite error' : 'suite success')
-					div.name= suite.name
-					div.package= suite.package
-					ul.testcases
-						each testCase in suite.testcases
-							li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
-								if testCase.isFailure
-									div.name= testCase.name + " " + testCase.failureMessage
-									each sshot in testCase.screenshots
-										div.screenshot
-											img(src= sshot)
-								else
-									div.name= testCase.name
+			each package in testRun.packages
+				div(class= (package.isFailure) ? 'package error' : 'package success')
+					h2.name!= (package.isFailure) ? '&#10005; ' + package.name : '&#10003; ' + package.name
+					div.suites
+						each suite in package.suites
+							div(class= (suite.isFailure) ? 'suite error' : 'suite success')
+								h3.name= suite.name
+								ul.testcases
+									each testCase in suite.testcases
+										li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
+											if testCase.isFailure
+												div.status &#10005;
+												div.name= testCase.name + " " + testCase.failureMessage
+												each sshot in testCase.screenshots
+													div.screenshot
+														img(src= sshot)
+											else
+												div.status &#10003;
+												div.name= testCase.name

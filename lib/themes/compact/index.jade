@@ -6,18 +6,19 @@ html(lang="en")
 		style(type="text/css").
 			body{
 				margin: 10px;
-				font-family: 'Helvetica Neue';
-			}
-
-			h1{
-				font-size: 1em;
-			}
-
-			a{
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 				font-size: 0.8em;
 			}
-			#container{
-				margin-top: 10px;
+
+			h2{
+				font-size: 1.2em;
+				margin: 2px;
+				padding: 0;
+			}
+			h3{
+				font-size: 1em;
+				padding: 0;
+				margin: 0;
 			}
 
 			.toggleSuccess, .toggleError{
@@ -27,72 +28,78 @@ html(lang="en")
 			.errmessages{
 				background-color: rgba(238, 64, 64, 0.43);
 				border: 1px solid rgba(235, 28, 28, 0.78);
-				padding: 2px;
+				padding: 5px;
 			}
 
 			.errmessages h2{
-				margin: 2px;
-				font-size: .8em;
+				margin: 5px 0;
+				font-size: 1em;
 			}
 
 			.errmessages .errors{
 				display: none;
-				font-size: .8em;
 			}
 
-			.suite{
-				border-bottom: 1px solid grey;
-				padding:0;
-			}
-			.suite.error{
-				background-color: transparent;
+			.package > .name {
+			 	cursor: pointer;
 			}
 
-			.suite:hover{
+			.suites {
+				margin-left: 30px;
+				display: none;
+			}
+
+			.suite > .name {
 				cursor: pointer;
 			}
-			.suite>.name{
-				color: rgb(51, 134, 51);
-				font-size: 1em;
-				font-weight: bold;
-			}
-			.suite.error>.name{
-				color: rgb(178, 43, 43);
-			}
-			.suite>.name>.package{
-				font-size: .7em;
-				padding-left: 5px;
+
+			ul{
+				list-style: none;
 			}
 
-			.suite>.name, .testcase>.name{
-				padding-left: 5px;
+			.testcases {
+				display: none;
 			}
 
-			.testcases{
-				display:none;
-				font-size: 0.8em;
+			.status{
+				display: inline-block;
 			}
-			.testcase{
-				color: rgb(51, 134, 51);
+
+			.testcase .name {
+				display: inline-block;
+			}
+
+			.success{
+				color: #ccc;
 			}
 			.testcase img{
 				max-width: 80%;
 			}
-			.testcase.error{
+			.package.error .name{
+				color: rgb(178, 43, 43);
+			}
+			.testcase.success .name{
+				color: #ccc;
+			}
+			.testcase.error .status{
 				color: rgb(178, 43, 43);
 			}
 
 		script(type='text/javascript').
 			$(document).ready(function(){
+				$('.package>.name').click(function(){
+					$(this).siblings('.suites').slideToggle();
+				});
+
 				$('.suite, .errmessages').click(function(){
 					var $elem = $(this);
 					$elem.children('.testcases, .errors').slideToggle();
 				});
 				$('.toggleSuccess').click(function(){
-					$('.suite.success').slideToggle();
+					$('.package.success').slideToggle();
 				});
 				$('.toggleError').click(function(){
-					$('.suite.error').slideToggle();
+					$('.package.error').slideToggle();
 				});
 			});
 
@@ -108,17 +115,22 @@ html(lang="en")
 						each msg in testRun.errmessages
 							li= msg
 
-			each suite in testRun.suites
-				div(class= (suite.isFailure) ? 'suite error' : 'suite success')
-					div.name= suite.name
-						span.package= '(' + suite.package + ')'
-					ul.testcases
-						each testCase in suite.testcases
-							li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
-								if testCase.isFailure
-									div.name= testCase.name + " " + testCase.failureMessage
-									each sshot in testCase.screenshots
-										div.screenshot
-											img(src= sshot)
-								else
-									div.name= testCase.name
+			each package in testRun.packages
+				div(class= (package.isFailure) ? 'package error' : 'package success')
+					h2.name!= (package.isFailure) ? '&#10005; ' + package.name : '&#10003; ' + package.name
+					div.suites
+						each suite in package.suites
+							div(class= (suite.isFailure) ? 'suite error' : 'suite success')
+								h3.name= suite.name
+								ul.testcases
+									each testCase in suite.testcases
+										li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
+											if testCase.isFailure
+												div.status &#10005;
+												div.name= testCase.name + " " + testCase.failureMessage
+												each sshot in testCase.screenshots
+													div.screenshot
+														img(src= sshot)
+											else
+												div.status &#10003;
+												div.name= testCase.name

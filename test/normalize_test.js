@@ -31,17 +31,17 @@ exports['normalize xml object'] = {
 	'fromXML option': function(test){
 		var run = normalize([xmlObjects.withOneError], {fromXML: true});
 
-		test.equal(run.suites.length, 3);
-		test.equal(run.suites[0].isFailure, false, "Correctly determine isFailure");
-		test.equal(run.suites[0].testcases.length, 2, "Correct number of test cases");
-		test.equal(run.suites[2].isFailure, true, "Correctly determine isFailure on error");
+		test.equal(run.packages[0].suites.length, 3);
+		test.equal(run.packages[0].suites[0].isFailure, false, "Correctly determine isFailure");
+		test.equal(run.packages[0].suites[0].testcases.length, 2, "Correct number of test cases");
+		test.equal(run.packages[0].suites[2].isFailure, true, "Correctly determine isFailure on error");
 		test.done();
 	},
 
 	'hideSuccess option': function(test){
 		var run = normalize([xmlObjects.withOneError], {fromXML: true, hideSuccess: true});
-		test.equal(run.suites.length, 1);
-		test.equal(run.suites[0].name, 'step four');
+		test.equal(run.packages[0].suites.length, 1);
+		test.equal(run.packages[0].suites[0].name, 'step four');
 		test.done();
 	},
 
@@ -54,23 +54,22 @@ exports['normalize xml object'] = {
 
 exports['normalize report object'] = {
   setUp: function(done) {
-    // setup here
     done();
   },
   'no options': function(test) {
     var run = normalize(reportObjects.withOneFailure);
 
-    test.equal(run.suites.length, 3);
-    test.equal(run.suites[0].isFailure, false, "Correctly determine isFailure");
-    test.equal(run.suites[0].testcases.length, 2, "Correct number of test cases");
-    test.equal(run.suites[2].isFailure, true, "Correctly determine isFailure");
+    test.equal(run.packages[0].suites.length, 3);
+    test.equal(run.packages[0].suites[0].isFailure, false, "Correctly determine isFailure");
+    test.equal(run.packages[0].suites[0].testcases.length, 2, "Correct number of test cases");
+    test.equal(run.packages[0].suites[2].isFailure, true, "Correctly determine isFailure");
     test.done();
   },
 
 	'hideSuccess option': function(test){
 		var run = normalize(reportObjects.withOneFailure, {hideSuccess: true});
-		test.equal(run.suites.length, 1);
-		test.equal(run.suites[0].name, 'step three');
+		test.equal(run.packages[0].suites.length, 1);
+		test.equal(run.packages[0].suites[0].name, 'step three');
 		test.done();
 	},
 

@@ -159,23 +159,24 @@ html(lang="en")
 												div.row
 													div.col-md-offset-2.overf= msg
 
-								each suite in testRun.suites
-									if suite.isFailure
-										div.row
-											div.info.failure
-												div.col-md-3.col-md-offset-1.overf= suite.package
-												div.col-md-1 -
-												div.col-md-7.overf= suite.name
-											div.asserts
-												each testCase in suite.testcases
-													div.row
+								each package in testRun.packages
+									each suite in package.suites
+										if suite.isFailure
+											div.row
+												div.info.failure
+													div.col-md-3.col-md-offset-1.overf= suite.package
+													div.col-md-1 -
+													div.col-md-7.overf= suite.name
+												div.asserts
+													each testCase in suite.testcases
+														div.row
+															if testCase.isFailure
+																div.col-md-offset-2.col-md-1.status.failure &#10005;
+															else
+																div.col-md-offset-2.col-md-1.status.success &#10003;
+															div.col-md-9.name= testCase.name
 														if testCase.isFailure
-															div.col-md-offset-2.col-md-1.status.failure &#10005;
-														else
-															div.col-md-offset-2.col-md-1.status.success &#10003;
-														div.col-md-9.name= testCase.name
-													if testCase.isFailure
-														each sshot in testCase.screenshots
-															div.row
-																a(href= sshot, target= 'blank')
-																	img.col-md-offset-3.col-md-8(src= sshot)
+															each sshot in testCase.screenshots
+																div.row
+																	a(href= sshot, target= 'blank')
+																		img.col-md-offset-3.col-md-8(src= sshot)
