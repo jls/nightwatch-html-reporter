@@ -11,22 +11,26 @@ h1 Nightwatch Results
 				each msg in testRun.errmessages
 					li= msg
 
-	each package in testRun.packages
-		div(class= (package.isFailure) ? 'package error' : 'package success')
-			h2.name!= (package.isFailure) ? '&#10005; ' + package.name : '&#10003; ' + package.name
-			div.suites
-				each suite in package.suites
-					div(class= (suite.isFailure) ? 'suite error' : 'suite success')
-						h3.name= suite.name
-						ul.testcases
-							each testCase in suite.testcases
-								li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
-									if testCase.isFailure
-										div.status &#10005;
-										div.name= testCase.name + " " + testCase.failureMessage
-										each sshot in testCase.screenshots
-											div.screenshot
-												img(src= sshot)
-									else
-										div.status &#10003;
-										div.name= testCase.name
+	each group in testRun.groups
+		div(class= (group.isFailure) ? 'group error' : 'group success')
+			h2.name!= group.name
+			div.packages
+				each package in group.packages
+					div(class= (package.isFailure) ? 'package error' : 'package success')
+						h2.name!=(package.isFailure) ? '&#10005; ' + package.name : '&#10003; ' + package.name
+						div.suites
+							each suite in package.suites
+								div(class= (suite.isFailure) ? 'suite error' : 'suite success')
+									h3.name= suite.name
+									ul.testcases
+										each testCase in suite.testcases
+											li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
+												if testCase.isFailure
+													div.status &#10005;
+													div.name= testCase.name + " " + testCase.failureMessage
+													each sshot in testCase.screenshots
+														div.screenshot
+															img(src= sshot)
+												else
+													div.status &#10003;
+													div.name= testCase.name

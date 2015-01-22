@@ -34,20 +34,32 @@ h3{
 	display: none;
 }
 
+.packages {
+	margin: 0 0 0 30px;
+	display: none;
+}
 .suites {
 	margin: 0 0 0 30px;
 	display: none;
 }
 
 .package {
-	margin: 15px 0;
+	margin: 5px 0;
 }
 .package > .name {
 	cursor: pointer;
 }
 
+.group {
+	margin: 5px 0;
+}
+
+.group > .name {
+	cursor: pointer;
+}
+
 .suite {
-	margin: 15px 0;
+	margin: 5px 0;
 }
 
 .suite > .name {
@@ -76,7 +88,14 @@ ul{
 .testcase img{
 	max-width: 80%;
 }
-.package.error .name{
+.testcases {
+	padding-left: 30px
+}
+
+.testcase li 
+
+.package.error .name,
+.group.error .name{
 	color: rgb(178, 43, 43);
 }
 .testcase.success .name{
