@@ -1,0 +1,17 @@
+h2{
+	margin: 2px;
+}
+
+.errmessages{
+	background-color: rgba(238, 64, 64, 0.43);
+	border: 1px solid rgba(235, 28, 28, 0.78);
+	padding: 5px;
+}
+
+.package {
+	margin: 0;
+}
+
+.suite {
+	margin: 0;
+}

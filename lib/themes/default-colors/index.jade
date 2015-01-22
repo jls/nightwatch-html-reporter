@@ -4,10 +4,11 @@ html(lang="en")
 		title Nightwatch HTML Report - Default Theme
 		script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 		style(type="text/css")
+			include ../default/styles.css
 			include styles.css
 
 		script(type='text/javascript')
-			include script.js
+			include ../default/script.js
 
 	body
-		include report.jade
+		include ../default/report.jade
