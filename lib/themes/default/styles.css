@@ -104,3 +104,9 @@ ul{
 .testcase.error .status{
 	color: rgb(178, 43, 43);
 }
+
+.toggleLvl1,
+.toggleLvl2,
+.toggleLvl3 {
+	margin-right: 5px;
+}

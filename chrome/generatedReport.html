@@ -109,6 +109,12 @@ ul{
 .testcase.error .status{
 	color: rgb(178, 43, 43);
 }
+
+.toggleLvl1,
+.toggleLvl2,
+.toggleLvl3 {
+	margin-right: 5px;
+}
     </style>
     <script type="text/javascript">$(document).ready(function(){
 	$('.package>.name').click(function(){
@@ -127,12 +133,48 @@ ul{
 	$('.toggleError').click(function(){
 		$('.package.error').slideToggle();
 	});
+
+	var lvl1 = true;
+	var lvl1Selector = '.packages'
+	$('.toggleLvl1').click(function(){
+		if (lvl1) {
+			lvl1 = false;
+			$(lvl1Selector).show();
+		} else {
+			lvl1 = true;
+			$(lvl1Selector).hide();
+		}
+	});
+
+	var lvl2 = true;
+	var lvl2Selector = '.suites';
+	$('.toggleLvl2').click(function(){
+		if (lvl2) {
+			lvl2 = false;
+			$(lvl2Selector).show();
+		} else {
+			lvl2 = true;
+			$(lvl2Selector).hide();
+		}
+	});
+
+	var lvl3 = true;
+	var lvl3Selector = '.testcases, .errors'
+	$('.toggleLvl3').click(function(){
+		if (lvl3) {
+			lvl3 = false;
+			$(lvl3Selector).show();
+		} else {
+			lvl3 = true;
+			$(lvl3Selector).hide();
+		}
+	});
 });
     </script>
   </head>
   <body>
     <h1>Nightwatch Results</h1>
-    <div id="container"><a href="#" class="toggleSuccess">Show/Hide Successes</a>
+    <div id="container"><a href="#" class="toggleSuccess">Show/Hide Successes</a><br><a href="#" class="toggleLvl1">Level 1</a><a href="#" class="toggleLvl2">Level 2</a><a href="#" class="toggleLvl3">Level 3</a>
       <div class="group success">
         <h2 class="name">\sanity</h2>
         <div class="packages">
@@ -217,20 +259,6 @@ ul{
         <h2 class="name">\sanity\kanity\panity</h2>
         <div class="packages">
           <div class="package success">
-            <h2 class="name">&#10003; panity</h2>
-            <div class="suites">
-              <div class="suite success">
-                <h3 class="name">Hello world!</h3>
-                <ul class="testcases">
-                  <li class="testcase success">
-                    <div class="status">&#10003;</div>
-                    <div class="name">Assertion passed: Hello world 0.8104231953620911</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="package success">
             <h2 class="name">&#10003; kanity</h2>
             <div class="suites">
               <div class="suite success">
@@ -239,6 +267,20 @@ ul{
                   <li class="testcase success">
                     <div class="status">&#10003;</div>
                     <div class="name">Assertion passed: Hello world 0.43939864728599787</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="package success">
+            <h2 class="name">&#10003; panity</h2>
+            <div class="suites">
+              <div class="suite success">
+                <h3 class="name">Hello world!</h3>
+                <ul class="testcases">
+                  <li class="testcase success">
+                    <div class="status">&#10003;</div>
+                    <div class="name">Assertion passed: Hello world 0.8104231953620911</div>
                   </li>
                 </ul>
               </div>

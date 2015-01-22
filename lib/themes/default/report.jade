@@ -2,6 +2,11 @@ h1 Nightwatch Results
 #container
 	if !hideSuccess
 		a.toggleSuccess(href='#') Show/Hide Successes
+	br
+	a.toggleLvl1(href='#') Level 1
+	a.toggleLvl2(href='#') Level 2
+	a.toggleLvl3(href='#') Level 3
+
 
 	if testRun.errmessages.length > 0
 		div.errmessages
