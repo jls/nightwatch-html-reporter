@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="manity"
+             errors="0"
+             failures="0"
+             tests="1">
+  
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="Hello world!" package="manity" skipped="0"
+    tests="1" time="" timestamp="">
+    
+    
+      <testcase name="Assertion passed: Hello world 0.04178442875854671">
+        
+        
+      </testcase>
+    
+    
+    </testsuite>
+  
+</testsuites>
