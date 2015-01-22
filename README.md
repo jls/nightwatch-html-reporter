@@ -72,23 +72,28 @@ Options:
 
 ## Example Reports
 
-### Default Theme
+### Default Theme (default)
 
-![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/screen1.png)
+![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/default.png)
 
-### Cover Theme
+## Cover Theme (cover)
 
 ![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/cover_success.png)
 
 ![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/cover_failure.png)
 
-### Compact Theme
+## Compact Theme (compact)
 
-![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/screen2.png)
+![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/compact.png)
 
+## Default-Gray Theme (default-gray)
 
-## Release History
-_(Nothing yet)_
+![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/default-gray.png)
+
+## Compact-Gray Theme (compact-gray)
+
+![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/compact-gray.png)
+
 
 ## License
 Copyright (c) 2014 James Smith
