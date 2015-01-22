@@ -11,8 +11,7 @@ h1 Nightwatch Results
 				each msg in testRun.errmessages
 					li= msg
 
-	each groupname in Object.keys(testRun.groups).sort()
-		- group = testRun.groups[groupname];
+	each group in testRun.groups
 		div(class= (group.isFailure) ? 'group error' : 'group success')
 			h2.name!= group.name
 			div.packages
