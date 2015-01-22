@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vanity"
+             errors="0"
+             failures="0"
+             tests="1">
+  
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="Check global macros are available" package="vanity" skipped="0"
+    tests="1" time="" timestamp="">
+    
+    
+      <testcase name="Assertion passed: globals should be loaded">
+        
+        
+      </testcase>
+    
+    
+    </testsuite>
+  
+</testsuites>
