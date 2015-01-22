@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nightwatch HTML Report - Default Theme</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style type="text/css">body{
+	margin: 10px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+h2{
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+h3{
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+.toggleSuccess, .toggleError{
+	margin-right: 10px;
+}
+
+.errmessages{
+	background-color: rgba(238, 64, 64, 0.43);
+	border: 1px solid rgba(235, 28, 28, 0.78);
+	padding: 5px;
+}
+
+.errmessages h2{
+	margin: 5px 0;
+	font-size: 1em;
+}
+
+.errmessages .errors{
+	display: none;
+}
+
+.packages {
+	margin: 0 0 0 30px;
+	display: none;
+}
+.suites {
+	margin: 0 0 0 30px;
+	display: none;
+}
+
+.package {
+	margin: 5px 0;
+}
+.package > .name {
+	cursor: pointer;
+}
+
+.group {
+	margin: 5px 0;
+}
+
+.group > .name {
+	cursor: pointer;
+}
+
+.suite {
+	margin: 5px 0;
+}
+
+.suite > .name {
+	cursor: pointer;
+}
+
+ul{
+	list-style: none;
+}
+
+.testcases {
+	display: none;
+}
+
+.status{
+	display: inline-block;
+}
+
+.testcase .name {
+	display: inline-block;
+}
+
+.success{
+	color: rgb(56, 142, 56);
+}
+.testcase img{
+	max-width: 80%;
+}
+.testcases {
+	padding-left: 30px
+}
+
+.testcase li 
+
+.package.error .name,
+.group.error .name{
+	color: rgb(178, 43, 43);
+}
+.testcase.success .name{
+	color: rgb(56, 142, 56);
+}
+.testcase.error .status{
+	color: rgb(178, 43, 43);
+}
+    </style>
+    <script type="text/javascript">$(document).ready(function(){
+	$('.package>.name').click(function(){
+		$(this).siblings('.suites').slideToggle();
+	});
+	$('.group>.name').click(function(){
+		$(this).siblings('.packages').slideToggle();
+	});
+	$('.suite, .errmessages').click(function(){
+		var $elem = $(this);
+		$elem.children('.testcases, .errors').slideToggle();
+	});
+	$('.toggleSuccess').click(function(){
+		$('.package.success').slideToggle();
+	});
+	$('.toggleError').click(function(){
+		$('.package.error').slideToggle();
+	});
+});
+    </script>
+  </head>
+  <body>
+    <h1>Nightwatch Results</h1>
+    <div id="container"><a href="#" class="toggleSuccess">Show/Hide Successes</a>
+      <div class="group success">
+        <h2 class="name">\sanity</h2>
+        <div class="packages">
+          <div class="package success">
+            <h2 class="name">&#10003; sanity</h2>
+            <div class="suites">
+              <div class="suite success">
+                <h3 class="name">Check global macros are available</h3>
+                <ul class="testcases">
+                  <li class="testcase success">
+                    <div class="status">&#10003;</div>
+                    <div class="name">Assertion passed: globals should be loaded</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group success">
+        <h2 class="name">\sanity\vanity\panity</h2>
+        <div class="packages">
+          <div class="package success">
+            <h2 class="name">&#10003; panity</h2>
+            <div class="suites">
+              <div class="suite success">
+                <h3 class="name">Check global macros are available</h3>
+                <ul class="testcases">
+                  <li class="testcase success">
+                    <div class="status">&#10003;</div>
+                    <div class="name">Assertion passed: globals should be loaded</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group success">
+        <h2 class="name">\sanity\vanity</h2>
+        <div class="packages">
+          <div class="package success">
+            <h2 class="name">&#10003; vanity</h2>
+            <div class="suites">
+              <div class="suite success">
+                <h3 class="name">Check global macros are available</h3>
+                <ul class="testcases">
+                  <li class="testcase success">
+                    <div class="status">&#10003;</div>
+                    <div class="name">Assertion passed: globals should be loaded</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
