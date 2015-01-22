@@ -1,0 +1,7 @@
+.success {
+	color: #ccc;
+}
+
+.testcase.success .name {
+	color: #ccc;
+}

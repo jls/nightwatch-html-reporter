@@ -71,7 +71,7 @@ ul{
 }
 
 .success{
-	color: #ccc;
+	color: rgb(56, 142, 56);
 }
 .testcase img{
 	max-width: 80%;
@@ -80,7 +80,7 @@ ul{
 	color: rgb(178, 43, 43);
 }
 .testcase.success .name{
-	color: #ccc;
+	color: rgb(56, 142, 56);
 }
 .testcase.error .status{
 	color: rgb(178, 43, 43);
