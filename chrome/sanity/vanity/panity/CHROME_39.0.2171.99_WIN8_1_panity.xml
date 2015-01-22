@@ -5,11 +5,11 @@
              tests="1">
   
   <testsuite errors="0" failures="0" hostname="" id=""
-    name="Check global macros are available" package="panity" skipped="0"
+    name="Hello world!" package="panity" skipped="0"
     tests="1" time="" timestamp="">
     
     
-      <testcase name="Assertion passed: globals should be loaded">
+      <testcase name="Assertion passed: Hello world 0.9957693223841488">
         
         
       </testcase>

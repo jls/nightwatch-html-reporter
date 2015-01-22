@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vanity"
+<testsuites name="panity"
              errors="0"
              failures="0"
              tests="1">
   
   <testsuite errors="0" failures="0" hostname="" id=""
-    name="Hello world!" package="vanity" skipped="0"
+    name="Hello world!" package="panity" skipped="0"
     tests="1" time="" timestamp="">
     
     
-      <testcase name="Assertion passed: Hello world 0.7502192000392824">
+      <testcase name="Assertion passed: Hello world 0.8104231953620911">
         
         
       </testcase>
