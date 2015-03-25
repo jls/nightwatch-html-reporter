@@ -31,29 +31,32 @@ exports.reportGenerator = {
 	},
 	'file location': function(test){
 		test.expect(1);
-		var normalized = normalize(reportObjects.withOneFailure);
-		generator.writeReport(normalized, {
-			reportsDirectory: __dirname,
-			reportFilename: 'testfilename.html',
-			themeName: 'default',
-			saveFile: false
-		}, function(err, reportFilename, html){
-			test.equal(reportFilename, path.join(__dirname, 'testfilename.html'));
-			test.done();
-		});
+		normalize(null, reportObjects.withOneFailure, function(err, normalized){
+      generator.writeReport({
+        reportsDirectory: __dirname,
+        reportFilename: 'testfilename.html',
+        themeName: 'default',
+        saveFile: false
+      }, normalized, function(err, reportFilename, html){
+        test.equal(reportFilename, path.join(__dirname, 'testfilename.html'));
+        test.done();
+      });
+    });
+
 	},
 
 	'shows errors': function(test){
 		test.expect(1);
-		var normalized = normalize(reportObjects.withOneError);
-		generator.writeReport(normalized, {
-			reportsDirectory: __dirname,
-			reportFilename: 'testfilename.html',
-			themeName: 'default',
-			saveFile: false
-		}, function(err, filename, html){
-			test.notEqual(-1, html.indexOf(normalized.errmessages[0].replace(/\"/g, "&quot;")));
-			test.done();
-		});
+		normalize(null, reportObjects.withOneError, function(err, normalized){
+      generator.writeReport({
+        reportsDirectory: __dirname,
+        reportFilename: 'testfilename.html',
+        themeName: 'default',
+        saveFile: false
+      }, normalized, function(err, filename, html){
+        test.notEqual(-1, html.indexOf(normalized.errmessages[0].replace(/\"/g, "&quot;")));
+        test.done();
+      });
+    });
 	}
 };

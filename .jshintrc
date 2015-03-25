@@ -1,8 +1,8 @@
 {
   "smarttabs": true,
-	"trailing": true,
-	"evil": true,
-	"loopfunc": true,
-	"laxcomma": true,
-	"node": true
+  "trailing": true,
+  "evil": true,
+  "loopfunc": true,
+  "laxcomma": true,
+  "node": true
 }
