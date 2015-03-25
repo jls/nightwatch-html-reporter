@@ -1,7 +1,7 @@
 {
   "name": "nightwatch-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports.",
-  "version": "0.2.12",
+  "version": "0.3.0",
   "homepage": "https://github.com/jls/nightwatch-html-reporter",
   "author": {
     "name": "James Smith",
