@@ -11,11 +11,11 @@ h1 Nightwatch Results
 				each msg in testRun.errmessages
 					li= msg
 
-	each package in testRun.packages
-		div(class= (package.isFailure) ? 'package error' : 'package success')
-			h2.name!= (package.isFailure) ? '&#10005; ' + package.name : '&#10003; ' + package.name
+	each pkg in testRun.packages
+		div(class= (pkg.isFailure) ? 'package error' : 'package success')
+			h2.name!= (pkg.isFailure) ? '&#10005; ' + pkg.name : '&#10003; ' + pkg.name
 			div.suites
-				each suite in package.suites
+				each suite in pkg.suites
 					div(class= (suite.isFailure) ? 'suite error' : 'suite success')
 						h3.name= suite.name
 						ul.testcases

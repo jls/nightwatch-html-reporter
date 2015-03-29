@@ -159,8 +159,8 @@ html(lang="en")
 												div.row
 													div.col-md-offset-2.overf= msg
 
-								each package in testRun.packages
-									each suite in package.suites
+								each pkg in testRun.packages
+									each suite in pkg.suites
 										if suite.isFailure
 											div.row
 												div.info.failure
