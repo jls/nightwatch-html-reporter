@@ -1,3 +1,5 @@
+// Objects that are passed to the
+// reporter function from nightwatch.
 module.exports = {
 
 	withOneFailure: {

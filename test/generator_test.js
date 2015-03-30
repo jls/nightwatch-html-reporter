@@ -1,6 +1,6 @@
 'use strict';
 
-var reportObjects = require('./nightwatchReportObjects.js');
+var reportObjects = require('./mockdata/nightwatchReportObjects.js');
 var normalize = require('../lib/normalize.js');
 var generator = require('../lib/reportGenerator');
 var path = require('path');

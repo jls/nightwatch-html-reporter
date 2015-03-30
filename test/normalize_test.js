@@ -1,7 +1,7 @@
 'use strict';
 
-var reportObjects = require('./nightwatchReportObjects.js');
-var xmlObjects = require('./parsedXMLObject.js');
+var reportObjects = require('./mockdata/nightwatchReportObjects.js');
+var xmlObjects = require('./mockdata/parsedxmlobjs.js');
 var normalize = require('../lib/normalize.js');
 
 /*
@@ -32,6 +32,7 @@ exports['normalize xml object'] = {
     normalize({fromXML: true}, [xmlObjects.withOneError], function(err, run){
       test.equal(run.packages[0].suites.length, 3);
       test.equal(run.packages[0].suites[0].isFailure, false, "Correctly determine isFailure");
+      test.equal((run.packages[0].suites[0].failures === 0), true);
       test.equal(run.packages[0].suites[0].testcases.length, 2, "Correct number of test cases");
       test.equal(run.packages[0].suites[2].isFailure, true, "Correctly determine isFailure on error");
       test.done();
