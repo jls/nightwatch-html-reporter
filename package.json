@@ -29,8 +29,8 @@
     "test": "grunt nodeunit"
   },
   "dependencies": {
-    "xml2js": "0.4.6",
-    "lodash": "^2.4.1",
+    "xml2js": "^0.4.6",
+    "lodash": "^3.0.0",
     "jade": "^1.7.0",
     "nconf": "^0.6.9",
     "readdirp": "^1.2.0",
