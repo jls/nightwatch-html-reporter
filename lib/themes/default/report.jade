@@ -19,14 +19,14 @@ h1 Nightwatch Results
 					div(class= (suite.isFailure) ? 'suite error' : 'suite success')
 						h3.name= suite.name
 						ul.testcases
-							each testCase in suite.testcases
+							each testCase in suite.cases
 								li(class= (testCase.isFailure) ? 'testcase error' : 'testcase success')
 									if testCase.isFailure
 										div.status &#10005;
-										div.name= testCase.name + " " + testCase.failureMessage
+										div.name= testCase.message + " " + testCase.failure
 										each sshot in testCase.screenshots
 											div.screenshot
 												img(src= sshot)
 									else
 										div.status &#10003;
-										div.name= testCase.name
+										div.name= testCase.message + ((testCase.skipped) ? " (skipped)" : "")

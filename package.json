@@ -46,7 +46,8 @@
   "keywords": [
     "nightwatch",
     "reporter",
-    "html reporter"
+    "html reporter",
+    "custom reporter"
   ],
   "preferGlobal": "true",
   "bin": {

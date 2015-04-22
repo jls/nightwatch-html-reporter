@@ -4,8 +4,22 @@
 
 Generates an HTML view of the Nightwatchjs test reports.
 
-## Getting Started
-Install the module with: `npm install -g nightwatch-html-reporter`
+## Important Compatibility
+
+**For Nightwatch Version < 0.6.4**
+```
+npm install nightwatch-html-reporter@0.3.1
+```
+
+**For Nightwatch Version 0.6.4**
+```
+npm install nightwatch-html-reporter
+```
+
+In version 0.6.4 Nightwatch changed the format of both the generated XML
+reports and the object the reporter receives after a test run.
+
+Version 0.3.1 is the last version that supports Nightwatch < 0.6.4
 
 ### Using the reporter with the built in Nightwatch reporter
 This requires Nightwatch >= 0.5.32.

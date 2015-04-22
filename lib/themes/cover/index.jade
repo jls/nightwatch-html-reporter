@@ -164,17 +164,17 @@ html(lang="en")
 										if suite.isFailure
 											div.row
 												div.info.failure
-													div.col-md-3.col-md-offset-1.overf= suite.package
+													div.col-md-3.col-md-offset-1.overf= suite.pkgName
 													div.col-md-1 -
 													div.col-md-7.overf= suite.name
 												div.asserts
-													each testCase in suite.testcases
+													each testCase in suite.cases
 														div.row
 															if testCase.isFailure
 																div.col-md-offset-2.col-md-1.status.failure &#10005;
 															else
 																div.col-md-offset-2.col-md-1.status.success &#10003;
-															div.col-md-9.name= testCase.name
+															div.col-md-9.name= testCase.message
 														if testCase.isFailure
 															each sshot in testCase.screenshots
 																div.row

@@ -76,9 +76,13 @@ ul{
 .testcase img{
   max-width: 80%;
 }
-.package.error .name{
+.package.error > .name{
   color: rgb(178, 43, 43);
 }
+.suite.error > .name{
+  color: rgb(178, 43, 43);
+}
+
 .testcase.success .name{
   color: rgb(56, 142, 56);
 }
