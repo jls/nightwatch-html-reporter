@@ -2,7 +2,7 @@
 
 var reportObjects = require('./mockdata/nightwatchReportObjects.js');
 var normalize = require('../lib/normalize.js');
-var generator = require('../lib/reportGenerator');
+var renderer = require('../lib/renderer.js');
 var path = require('path');
 
 /*
@@ -32,7 +32,7 @@ exports.reportGenerator = {
   'file location': function(test) {
     test.expect(1);
     normalize(null, reportObjects.withOneFailure, function(err, normalized) {
-      generator.writeReport({
+      renderer({
         reportsDirectory: __dirname,
         reportFilename: 'testfilename.html',
         themeName: 'default',
@@ -48,7 +48,7 @@ exports.reportGenerator = {
   'shows errors': function(test) {
     test.expect(1);
     normalize(null, reportObjects.withOneError, function(err, normalized) {
-      generator.writeReport({
+      renderer({
         reportsDirectory: __dirname,
         reportFilename: 'testfilename.html',
         themeName: 'default',
