@@ -42,6 +42,26 @@ module.exports = {
 nightwatch-html-reporter -d ~/myProject/tests/nightwatch/reports
 ```
 
+### Using the reporter with nightwatch `--reporter` option
+
+Create a file beside nightwatch/globals.js that is called something similar to `html-reporter.js` with the contents
+```javascript
+var HtmlReporter = require('nightwatch-html-reporter');
+/* Same options as when using the built in nightwatch reporter option */
+var reporter = new HtmlReporter({
+  openBrowser: true,
+  reportsDirectory: __dirname + '/reports/'
+});
+
+module.exports = {
+  write : function(results, options, done) {
+    reporter.fn(results, done);
+  }
+};
+```
+
+then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.js`
+
 ## Documentation
 
 ### Options when using built in Nightwatch reporter
