@@ -115,9 +115,9 @@ html(lang="en")
 					div.detail
 						each suite in pkg.suites
 							if suite.isFailure
-								div.infofailure= suite.name
+								div.infofailure= suite.name + " (" + suite.time + ")"
 							else
-								div.infosuccess= suite.name
+								div.infosuccess= suite.name + " (" + suite.time + ")"
 							each testCase in suite.cases
 								table
 									tr
