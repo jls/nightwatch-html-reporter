@@ -1,0 +1,137 @@
+doctype html
+html(lang="en")
+	head
+		title Nightwatch HTML Report - Outlook Theme
+		style(type="text/css").
+			html,
+			body{
+			  margin: 10px;
+			  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			  font-size: 0.9em;
+			}
+
+			.cover {
+				padding: 0 20px;
+			}
+
+			.success {
+				color: #35a535;
+			}
+
+			.failure {
+				color: #b23333;
+			}
+
+			.marksuccess {
+				display: inline-block;
+				margin: 0px 30px;
+			    margin-right: 10px;
+			    color: #35a535;
+			    line-height: 41px;
+			    vertical-align: middle;
+			    float: left;
+			}
+
+			.markfailure {
+				display: inline-block;
+				margin: 0px 30px;
+			    margin-right: 10px;
+			    color: #b23333;
+			    line-height: 41px;
+			    vertical-align: middle;
+			}
+
+			.stepsuccess {
+				display: inline-block;
+				color: #35a535;
+				line-height: 41px;
+				vertical-align: middle;
+			}
+
+			.stepfailure {
+				display: inline-block;
+				color: #b23333;
+				line-height: 41px;
+				vertical-align: middle;
+			}
+
+			.list {
+				list-style-type: none;
+			}
+
+			.info {
+				display: inline-block;
+				font-size: 1.23em;
+				line-height: 41px;
+				vertical-align: middle;
+			}
+
+			.infosuccess {
+				display: inline-block;
+				font-size: 1.23em;
+				line-height: 41px;
+				vertical-align: middle;
+				color: #35a535;
+			}
+
+			.infofailure  {
+				display: inline-block;
+				font-size: 1.23em;
+				line-height: 41px;
+				vertical-align: middle;
+				color: #b23333;
+			}
+
+			.suites {
+				margin: 10px 10px;
+				font-size: 1.23em;
+			}
+
+			.summary {
+				border: 1px solid black;
+				border-spacing: 10px;
+				text-align: center;
+			}
+
+			.detail {
+				text-align: left;
+				width: 100%;
+			}
+
+			.detailIndent {
+				padding-left: 40px;
+			}
+	body
+		div.cover
+			h1 Automated UI Tests Report
+			div.suites
+				if testRun.errmessages.length > 0
+					div.infofailure
+						div System Errors
+					each msg in testRun.errmessages
+						div= msg
+
+				each pkg in testRun.packages
+					div.detail
+						each suite in pkg.suites
+							if suite.isFailure
+								div.infofailure= suite.name + " (" + (suite.time || 0) + ")"
+							else
+								div.infosuccess= suite.name + " (" + (suite.time || 0) + ")"
+							each testCase in suite.cases
+								table
+									tr
+										if testCase.isFailure
+											td
+												div.markfailure &#10005;
+											td
+												div.stepfailure= testCase.message
+										else
+											td
+												div.marksuccess &#10003;
+											td
+												div.stepsuccess= testCase.message
+										if testCase.isFailure
+											each sshot in testCase.screenshots
+												a(href= sshot, target= 'blank')
+													img(src= sshot)
