@@ -46,7 +46,7 @@ exports.reportGenerator = {
   },
 
   'shows errors': function(test) {
-    test.expect(1);
+    test.expect(2);
     normalize(null, reportObjects.withOneError, function(err, normalized) {
       renderer({
         reportsDirectory: __dirname,
@@ -54,6 +54,7 @@ exports.reportGenerator = {
         themeName: 'default',
         saveFile: false
       }, normalized, function(err, filename, html) {
+        test.ok(html);
         test.notEqual(-1, html.indexOf(normalized.errmessages[0].replace(/\"/g, '&quot;')));
         test.done();
       });
