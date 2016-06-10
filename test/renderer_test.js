@@ -29,21 +29,6 @@ exports.reportGenerator = {
   setUp: function(done) {
     done();
   },
-  'file location': function(test) {
-    test.expect(1);
-    normalize(null, reportObjects.withOneFailure, function(err, normalized) {
-      renderer({
-        reportsDirectory: __dirname,
-        reportFilename: 'testfilename.html',
-        themeName: 'default',
-        saveFile: false
-      }, normalized, function(err, reportFilename, html) {
-        test.equal(reportFilename, path.join(__dirname, 'testfilename.html'));
-        test.done();
-      });
-    });
-
-  },
 
   'shows errors': function(test) {
     test.expect(2);
