@@ -2,15 +2,14 @@ doctype html
 html(lang="en")
 	head
 		meta(charset='utf-8')
-		title Nightwatch HTML Report - Compact Gray Theme
+		title Nightwatch HTML Report - Compact Theme
 		script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 		style(type="text/css")
 			include ../default/styles.css
-			include ../compact/styles.css
-			include ../default-gray/styles.css
+			include styles.css
 
 		script(type='text/javascript')
 			include ../default/script.js
 
 	body
-		include ../default/report.jade
+		include ../default/report.pug
