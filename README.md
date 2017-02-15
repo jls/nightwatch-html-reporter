@@ -126,7 +126,7 @@ Options:
 
 You can see examples of all of the available themes below.  You can also create your own theme by copying an existing
 theme directory and editing the styles.css file.  If you want to also change the structure of the html generated
-you can edit/copy `lib/themes/default/report.jade` which contains the markup for the majority of themes.
+you can edit/copy `lib/themes/default/report.pug` which contains the markup for the majority of themes.
 
 Theme options that are available on command line and in the options block:
 * default

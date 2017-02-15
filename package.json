@@ -20,19 +20,19 @@
     "test": "grunt nodeunit"
   },
   "dependencies": {
-    "async": "^1.5.0",
-    "jade": "^1.11.0",
+    "async": "^2.1.4",
     "lodash": "^4.9.0",
     "nconf": "^0.8.4",
     "open": "0.0.5",
+    "pug": "^2.0.0-beta11",
     "readdirp": "^2.0.0",
     "xml2js": "^0.4.6"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-nodeunit": "^0.2.0",
-    "grunt-contrib-watch": "^0.5.3"
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
   },
   "keywords": [
     "nightwatch",
