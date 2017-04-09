@@ -95,7 +95,13 @@ then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.j
 	themeName: 'default',
 
 	/* If true then only errors will be shown in the report. */
-	hideSuccess: false
+	hideSuccess: false,
+
+	/* If true we append a timestamp to the end of the generated report filename */
+	uniqueFilename: false,
+
+	/* If true we convert screenshot paths from absolute paths to relative to output file. */
+	relativeScreenshots: false
 }
 ```
 
@@ -107,19 +113,24 @@ nightwatch-html-reporter -d <reports-directory> [--theme (default:'default')] [-
 
 ```
 Options:
-  -d, --report-dir  Directory where Nightwatch XML reports are located.                  [required]
-  -t, --theme       Name of theme to use.  Should match a directory in lib/themes.  [default: "default"]
-  -o, --output      Filename to use when saving the generated report.               [default: "generatedReport.html"]
-	-u, --unique-filename		If true we ensure the filename of the generated report is unique.
-  -b, --browser     If true then generated report will be opened in the browser.    [default: true]
-  -c, --compact     Hides success cases and only shows error cases.
+-d, --report-dir            Directory where nightwatch reports are stored. [required]
+-t, --theme                 Name of theme to use.  Should match a directory in lib/themes. [default: "default"]
+-o, --output                Filename to use when saving the generated report. [default: "generatedReport.html"]
+-u, --unique-filename       Appends a timestamp to the end of the generated report filename. [default: false]
+-p, --prepend-filename      Prepend filename to the package name in the report.  Helps distinguish between multiple runs/diff browser/same test [default: false]
+-r, --relative-screenshots  Convert screenshot paths from absolute to relative to output file. [default: false]
+-b, --browser               If true generated report will be opened in the browser. [default: true]
+-c, --compact               Hides success cases and only shows error cases.
+-l, --log-level             Sets what is logged to the console. 0 - all, 1 - info, 2 - warn, 3 - error [default: 1]
+--save-nightwatch-report    Debug: A filename we use to save the report object passed to us by nightwatch.
+--save-xml-report           Debug: A filename we use to save the parsed XML object from XML reports.
 ```
 
 ## Available Themes
 
 You can see examples of all of the available themes below.  You can also create your own theme by copying an existing
 theme directory and editing the styles.css file.  If you want to also change the structure of the html generated
-you can edit/copy `lib/themes/default/report.jade` which contains the markup for the majority of themes.
+you can edit/copy `lib/themes/default/report.pug` which contains the markup for the majority of themes.
 
 Theme options that are available on command line and in the options block:
 * default
