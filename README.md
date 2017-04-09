@@ -86,6 +86,10 @@ then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.j
 	/* The filename that the html report will be saved as. */
 	reportFilename: 'generatedReport.html',
 
+	/* Boolean.  If true we ensure the generated report filename
+		is unique by appending a timestamp to the end. */
+	uniqueFilename: false,
+
 	/* The theme that will be used to generate the html report.
 		This should match a directory under the lib/themes directory. */
 	themeName: 'default',
@@ -106,6 +110,7 @@ Options:
   -d, --report-dir  Directory where Nightwatch XML reports are located.                  [required]
   -t, --theme       Name of theme to use.  Should match a directory in lib/themes.  [default: "default"]
   -o, --output      Filename to use when saving the generated report.               [default: "generatedReport.html"]
+	-u, --unique-filename		If true we ensure the filename of the generated report is unique.
   -b, --browser     If true then generated report will be opened in the browser.    [default: true]
   -c, --compact     Hides success cases and only shows error cases.
 ```
