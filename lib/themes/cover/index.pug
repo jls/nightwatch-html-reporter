@@ -3,8 +3,9 @@ html(lang="en")
 	head
 		meta(charset='utf-8')
 		title Nightwatch HTML Report - Cover Theme
-		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
-		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css")
+		style(type="text/css")
+			include bootstrap.min.css
+
 		style(type="text/css").
 			html,
 			body {
@@ -130,7 +131,6 @@ html(lang="en")
 			    width: 800px;
 			  }
 			}
-		script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 
 	body
 		div.site-wrapper
