@@ -1,5 +1,3 @@
-'use strict';
-
 var reportObjects = require('./mockdata/nightwatchReportObjects.js');
 var xmlObjects = require('./mockdata/parsedxmlobjs.js');
 var normalize = require('../lib/normalize.js');
@@ -102,7 +100,7 @@ exports['normalize report object'] = {
       test.equal(run.packages[0].suites[0].isFailure, true);
       test.equal(run.packages[0].suites[0].cases.length, 2);
       test.equal(run.packages[0].suites[0].cases[0].message, 'Element <body> was visible after 49 milliseconds.');
-      test.equal(run.packages[0].suites[0].cases[1].failure, 'Expected "visible" but got: "not found"');
+      test.equal(run.packages[0].suites[0].cases[1].failure, 'Expected \'visible\' but got: \'not found\'');
 
       // jscs:disable
       test.equal(run.packages[0].suites[0].cases[1].screenshots[0],

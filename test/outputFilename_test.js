@@ -1,5 +1,3 @@
-'use strict';
-
 var reportObjects = require('./mockdata/nightwatchReportObjects.js');
 var normalize = require('../lib/normalize.js');
 var getOutputFilename = require('../lib/outputFilename.js');

@@ -17,7 +17,8 @@
   "license": "MIT",
   "main": "lib/reporter",
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "grunt nodeunit",
+    "lint": "eslint ./"
   },
   "dependencies": {
     "async": "^2.1.4",
@@ -29,8 +30,13 @@
     "xml2js": "^0.4.6"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0"
   },
