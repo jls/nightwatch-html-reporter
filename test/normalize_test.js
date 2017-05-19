@@ -55,11 +55,13 @@ exports['normalize xml object'] = {
       test.equal(run.packages[1].suites[0].cases[0].message, 'Failing test Google');
       test.equal(run.packages[1].suites[0].cases[0].failure,
         'Timed out while waiting for element <button[name=btnGFAIL]> to be present for 1000 milliseconds.');
-      test.equal(run.packages[1].suites[0].cases[0].screenshots.length, 1);
+      test.equal(run.packages[1].suites[0].cases[0].screenshots.length, 2);
 
       // jscs:disable
       test.equal(run.packages[1].suites[0].cases[0].screenshots[0],
         '/Users/userOne/code/nightwatch/nightwatch-tests/tests/nightwatch/screenshots/ERROR_Mon-Apr-20-2015-175522-GMT-0400.png');
+      test.equal(run.packages[1].suites[0].cases[0].screenshots[1],
+        '/Users/userOne/code/nightwatch/nightwatch-tests/tests/nightwatch/screenshots/ERROR_Mon-Apr-20-2015-175523-GMT-0400.png');
       // jscs:enable
 
       test.equal(run.packages[2].suites[0].cases.length, 2);

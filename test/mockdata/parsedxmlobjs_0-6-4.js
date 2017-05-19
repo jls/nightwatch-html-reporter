@@ -81,7 +81,7 @@ module.exports = {
 									}
 								],
 								'system-out': [
-									'[[ATTACHMENT|/Users/userOne/code/nightwatch/nightwatch-tests/tests/nightwatch/screenshots/ERROR_Mon-Apr-20-2015-175522-GMT-0400.png]]'
+									'[[ATTACHMENT|/Users/userOne/code/nightwatch/nightwatch-tests/tests/nightwatch/screenshots/ERROR_Mon-Apr-20-2015-175522-GMT-0400.png]][[ATTACHMENT|/Users/userOne/code/nightwatch/nightwatch-tests/tests/nightwatch/screenshots/ERROR_Mon-Apr-20-2015-175523-GMT-0400.png]]'
 								]
 							}
 						]
