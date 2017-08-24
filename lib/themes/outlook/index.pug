@@ -121,18 +121,22 @@ html(lang="en")
 								div.infosuccess= suite.name + " (" + (suite.time || 0) + ")"
 							each testCase in suite.cases
 								table
-									tr
-										if testCase.isFailure
+									if testCase.isFailure
+										tr
 											td
 												div.markfailure &#10005;
 											td
 												div.stepfailure= testCase.message
-										else
+										tr
+											td
+												| &nbsp;
+											td
+												each sshot in testCase.screenshots
+													a(href= sshot, target= 'blank')
+														img(src= sshot)
+									else
+										tr
 											td
 												div.marksuccess &#10003;
 											td
 												div.stepsuccess= testCase.message
-										if testCase.isFailure
-											each sshot in testCase.screenshots
-												a(href= sshot, target= 'blank')
-													img(src= sshot)
