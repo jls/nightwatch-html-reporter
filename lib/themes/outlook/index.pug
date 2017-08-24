@@ -127,12 +127,16 @@ html(lang="en")
 												div.markfailure &#10005;
 											td
 												div.stepfailure= testCase.message
+										tr
+										tr
+											td
+												| &nbsp;
+											td
+												each sshot in testCase.screenshots
+													a(href= sshot, target= 'blank')
+														img(src= sshot)
 										else
 											td
 												div.marksuccess &#10003;
 											td
 												div.stepsuccess= testCase.message
-										if testCase.isFailure
-											each sshot in testCase.screenshots
-												a(href= sshot, target= 'blank')
-													img(src= sshot)
