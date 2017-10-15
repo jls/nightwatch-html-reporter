@@ -1,6 +1,7 @@
 var reportObjects = require('./mockdata/nightwatchReportObjects.js');
 var normalize = require('../lib/normalize.js');
-var getOutputFilename = require('../lib/outputFilename.js');
+var getOutputFilename = require('../lib/outputFilename.js').getOutputFilename;
+var insertSuiteNameIntoFilename = require('../lib/outputFilename.js').insertSuiteNameIntoFilename;
 var path = require('path');
 
 /*
@@ -72,5 +73,29 @@ exports.reportGenerator = {
     var filename = getOutputFilename(opts, this.normalized);
     test.ok(filename.match(/testfilename\d+\.html/));
     test.done();
+  },
+
+  'inserts suite name into filename': function(test) {
+    var opts = {
+      reportsDirectory: __dirname,
+      reportFilename: '../outputTest/testfilename.html'
+    };
+    var filename = getOutputFilename(opts, this.normalized);
+    filename = insertSuiteNameIntoFilename(filename, 'SpecialSuiteName');
+    test.ok(filename.indexOf('testfilename-SpecialSuiteName.html') != -1);
+    test.done();
+  },
+
+  'inserts suite name into filename removing group slashes': function(test) {
+    var opts = {
+      reportsDirectory: __dirname,
+      reportFilename: '../outputTest/testfilename.html'
+    };
+    var filename = getOutputFilename(opts, this.normalized);
+    filename = insertSuiteNameIntoFilename(filename, 'MyGroup/SpecialSuiteName');
+    console.log(filename);
+    test.ok(filename.indexOf('testfilename-MyGroup-SpecialSuiteName.html') != -1);
+    test.done();
   }
+
 };
