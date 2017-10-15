@@ -90,6 +90,10 @@ then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.j
 		is unique by appending a timestamp to the end. */
 	uniqueFilename: false,
 
+	/* Boolean.  If true we append the last suite name to
+		the report filename. */
+	separateReportPerSuite: false,
+
 	/* The theme that will be used to generate the html report.
 		This should match a directory under the lib/themes directory. */
 	themeName: 'default',
