@@ -42,5 +42,21 @@ exports.reportGenerator = {
         test.done();
       });
     });
+  },
+
+  'loads custom theme file when provided customTheme opt': function (test) {
+    test.expect(2);
+    normalize(null, reportObjects.withOneError, function(err, normalized) {
+      renderer({
+        reportsDirectory: __dirname,
+        reportFilename: 'testfilename.html',
+        customTheme: 'test/mockdata/custom-theme.pug',
+        saveFile: false
+      }, normalized, function(err, filename, html) {
+        test.ok(html);
+        test.equal(true, html.indexOf('a custom theme') !== -1);
+        test.done();
+      });
+    });
   }
 };
