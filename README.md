@@ -98,6 +98,10 @@ then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.j
 		This should match a directory under the lib/themes directory. */
 	themeName: 'default',
 
+	/* Relative path to custom theme. When this is given,
+	`themeName` will be ignored. */
+	customTheme: 'relative/path/to/theme.pug',
+
 	/* If true then only errors will be shown in the report. */
 	hideSuccess: false,
 
