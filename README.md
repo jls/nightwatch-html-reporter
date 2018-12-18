@@ -124,6 +124,7 @@ Options:
 -b, --browser               If true generated report will be opened in the browser. [default: true]
 -c, --compact               Hides success cases and only shows error cases.
 -l, --log-level             Sets what is logged to the console. 0 - all, 1 - info, 2 - warn, 3 - error [default: 1]
+--customTheme								Relative path to custom theme. When this is given, `themeName` will be ignored.
 --save-nightwatch-report    Debug: A filename we use to save the report object passed to us by nightwatch.
 --save-xml-report           Debug: A filename we use to save the parsed XML object from XML reports.
 ```
