@@ -125,7 +125,7 @@ Options:
 -p, --prepend-filename      Prepend filename to the package name in the report.  Helps distinguish between multiple runs/diff browser/same test [default: false]
 -r, --relative-screenshots  Convert screenshot paths from absolute to relative to output file. [default: false]
 -b, --browser               If true generated report will be opened in the browser. [default: true]
--f, --browser-fail   				If true, generated report will only open in browser on test failure. [default: true]
+-f, --browser-fail   				If true, generated report will only open in browser on test failure. [default: false]
 -c, --compact               Hides success cases and only shows error cases.
 -l, --log-level             Sets what is logged to the console. 0 - all, 1 - info, 2 - warn, 3 - error [default: 1]
 --customTheme								Relative path to custom theme. When this is given, `themeName` will be ignored.
