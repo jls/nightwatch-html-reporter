@@ -78,14 +78,17 @@ then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.j
 
 	/* Boolean. If true, then only errors will be shown in the report. */
 	hideSuccess: false,
-	
+
 	/* Boolean. If true, the generated html will be opened in your browser after the test run. */
 	openBrowser: true,
 
-        /* Boolean. If true, we convert screenshot paths from absolute paths 
+  /* Boolean. If true, generated report will only open in browser on test failure. */
+	openBrowserOnlyOnFailure: false
+
+        /* Boolean. If true, we convert screenshot paths from absolute paths
 		to relative to output file. */
 	relativeScreenshots: false
-	
+
 	/* String. The directory you've set nightwatch to store your reports.
 		On the CLI this determines where we read reports from, but on this
 		interface it determines where the generated report will be saved. */
@@ -93,14 +96,14 @@ then use the `--reporter` option like `./nightwatch --reporter ./html-reporter.j
 
 	/* String. The filename that the html report will be saved as. */
 	reportFilename: 'generatedReport.html',
-	
+
 	/* Boolean. If true, we append the last suite name to the report filename. */
-	separateReportPerSuite: false,	
-	
+	separateReportPerSuite: false,
+
 	/* String. The theme that will be used to generate the html report.
 		This should match a directory under the lib/themes directory. */
 	themeName: 'default',
-	
+
 	/* Boolean. If true, we ensure the generated report filename
 		is unique by appending a timestamp to the end. */
 	uniqueFilename: false,
@@ -122,6 +125,7 @@ Options:
 -p, --prepend-filename      Prepend filename to the package name in the report.  Helps distinguish between multiple runs/diff browser/same test [default: false]
 -r, --relative-screenshots  Convert screenshot paths from absolute to relative to output file. [default: false]
 -b, --browser               If true generated report will be opened in the browser. [default: true]
+-f, --browser-fail   				If true, generated report will only open in browser on test failure. [default: true]
 -c, --compact               Hides success cases and only shows error cases.
 -l, --log-level             Sets what is logged to the console. 0 - all, 1 - info, 2 - warn, 3 - error [default: 1]
 --customTheme								Relative path to custom theme. When this is given, `themeName` will be ignored.
