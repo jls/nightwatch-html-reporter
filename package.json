@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "async": "^2.1.4",
-    "lodash": "^4.9.0",
+    "lodash": "^4.17.21",
     "nconf": "^0.8.4",
     "opn": "^5.4.0",
-    "pug": "^2.0.0-beta11",
+    "pug": "^3.0.2",
     "readdirp": "^2.0.0",
     "xml2js": "^0.4.6"
   },
@@ -36,7 +36,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "nodeunit": "^0.11.0"
+    "nodeunit": "^0.11.2"
   },
   "keywords": [
     "nightwatch",
